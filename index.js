@@ -1,7 +1,9 @@
-/**
- * Created by pht-swesh on 15/4/15.
- */
+var http = require('http');
+var port = process.env.PORT || 1337;
 
-var db = require('full-text-search-light');
-var search = new db('my-db');   // name is optional
+http.createServer(function(req, res) {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(new Date() + '\n');
+}).listen(port);
 
+console.log('Server running on port %s', port);
